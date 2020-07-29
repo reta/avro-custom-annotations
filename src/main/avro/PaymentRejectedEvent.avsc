@@ -1,0 +1,35 @@
+{
+    "type": "record",
+    "name": "PaymentRejectedEvent",
+    "namespace": "com.example.event",
+    "javaAnnotation": "javax.annotation.Generated(\"avro\")",
+    "fields": [
+        {
+            "name": "id",
+            "type": {
+                "type": "string",
+                "logicalType": "uuid"
+            }
+        },
+        {
+            "name": "reason",
+            "type": {
+                "type": "enum",
+                "name": "PaymentStatus",
+                "namespace": "com.example.event",
+                "symbols": [
+                    "EXPIRED_CARD",
+                    "INSUFFICIENT_FUNDS",
+                    "DECLINED"
+                ]
+            }
+        },
+        {
+            "name": "date",
+            "type": {
+                "type": "long",
+                "logicalType": "local-timestamp-millis"
+            }
+        }
+    ]
+}
